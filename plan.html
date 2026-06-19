@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS Terminal - Gjennomføringsplan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        body {
+            background-color: #050a05;
+            color: #00ff00;
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+        
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            aspect-ratio: 1;
+            background-size: 100% 4px, 6px 100%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .terminal {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid #00ff00;
+            background-color: #030703;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+
+        header {
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1, h2, h3 {
+            color: #00ff00;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 1px dashed #00ff00;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .box {
+            border: 1px solid #00ff00;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #040904;
+            line-height: 1.6;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ffffff;
+            background-color: #00ff00;
+            color: #000000;
+        }
+
+        .step-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <header>
+            <div style="display: flex; justify-content: space-between;">
+                <span>DOKUMENT ID: PLAN-001</span>
+                <span>DATO: 2026-06-19</span>
+            </div>
+            <h1 style="margin: 10px 0 0 0;">PROSJEKTPLAN: Autonom Gjennomføring</h1>
+            <div style="font-weight: bold; margin-top: 5px;">STATUS: <span style="color: #00ff00;">AKTIV / CRON-STYRT</span></div>
+        </header>
+
+        <div class="box">
+            <h2>🎯 OVERORDNET MÅL</h2>
+            <p>Målet er å levere et fullstendig, kommunalt godkjent og byggeklart prosjekt for et minihus på 78 m² på Grefstadveien 81. Dette inkluderer tinglyst kontrakt med beslagsforbud, arkitekttegninger (2D/3D), situasjonskart, nabovarsling, samt visualiseringer og videoer av det ferdige huset plassert på tomten.</p>
+        </div>
+
+        <div class="box">
+            <h2>⚙️ SLIK SKAL DET GJENNOMFØRES (PROSESSEN)</h2>
+            <p>Vi bruker en fullstendig automatisert produksjonslinje (Pipeline) som kjører som en autonom bakgrunnsprosess på serveren. Pipeline styres av to dedikerte cronjobber som kjører periodisk og utfører følgende trinn:</p>
+            
+            <ol>
+                <li>
+                    <span class="step-title">Trinn 1: Datainnsamling & Regulering (Compliance)</span><br>
+                    En bakgrunnsagent henter kartdata, høydedata og reguleringsbestemmelser fra Grimstad kommune og Kartverket. Denne dataen brukes til å verifisere tillatt utnyttelsesgrad (BYA/BRA), byggegrenser og avstandskrav for Grefstadveien 81.
+                </li>
+                <li>
+                    <span class="step-title">Trinn 2: Vektor- og plantegning (Drafting)</span><br>
+                    Et Python-skript oversetter romkrav og arealer til nøyaktige SVG-arkitekttegninger (2D planløsninger, snitt og fasader). Tegningene lagres direkte i prosjektmappen og gjøres tilgjengelige på nettsiden.
+                </li>
+                <li>
+                    <span class="step-title">Trinn 3: Ekstern evaluering & Kritikk (Gemini 3.5 Pro)</span><br>
+                    Etter hver endring blir tegningene analysert av en uavhengig Gemini 3.5 Pro-modell. Kritikeren ser etter svakheter i romløsningen (f.eks. ugunstig dørplassering, manglende robotstøvsuger-flyt, lysforhold) og melder feil tilbake til arkitektagenten for korrigering.
+                </li>
+                <li>
+                    <span class="step-title">Trinn 4: 3D Visualisering & Video (Rendering)</span><br>
+                    Når AWS-tilgangen eller ComfyUI er klargjort, vil en rendering-pipeline automatisk laste opp 2D-tegningene til en GPU-instans, generere fotorealistiske 3D-modeller, plassere dem på tomten (basert på dine Google Maps-koordinater), og produsere animerte videoer.
+                </li>
+                <li>
+                    <span class="step-title">Trinn 5: Automatisk Søknadsutfylling (Automation)</span><br>
+                    En automatisert nettleseragent (Playwright/Puppeteer) logger seg inn på kommunens byggesøknadsportaler, fyller ut standardiserte skjemaer, vedlegger situasjonskartet og den tinglyste festekontrakten, og klargjør alt for din endelige signering.
+                </li>
+                <li>
+                    <span class="step-title">Trinn 6: Løpende publisering (Pages)</span><br>
+                    Pipeline samler alle logger, tegninger, 3D-illustrasjoner og videoer, oppdaterer denne nettsiden, og dytter alt opp til GitHub Pages slik at du har sanntidsoversikt over fremgangen.
+                </li>
+            </ol>
+        </div>
+
+        <div class="box">
+            <h2>📅 STRUKTURERTE CRONJOBBER</h2>
+            <p>Følgende jobber kjører i bakgrunnen for å drive prosjektet fremover:</p>
+            <ul>
+                <li><strong>Grefstadveien_81_Tomteanalyse_Regulering (Hver 24. time):</strong> Scanner etter kommunale endringer og oppdaterer tomtens rammebetingelser.</li>
+                <li><strong>Grefstadveien_Minihus_Production_Pipeline (Hver 12. time):</strong> Kjører hele produksjonslinjen (genererer tegninger, kjører ekstern kritikk, oppdaterer nettsiden og dytter til GitHub).</li>
+            </ul>
+        </div>
+
+        <p><a href="index.html">&lt;&lt; Tilbake til hovedterminalen</a></p>
+    </div>
+</body>
+</html>
