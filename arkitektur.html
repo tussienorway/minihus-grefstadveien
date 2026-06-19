@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS Terminal - Arkitektonisk Metodikk & Agent-Sirkel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        body {
+            background-color: #050a05;
+            color: #00ff00;
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+        
+        /* CRT Scanlines Effect */
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            aspect-ratio: 1;
+            background-size: 100% 4px, 6px 100%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .terminal {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 2px solid #00ff00;
+            background-color: #030703;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+            position: relative;
+        }
+
+        header {
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            border: 1px solid #00ff00;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #040904;
+        }
+
+        h1, h2, h3 {
+            color: #00ff00;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 1px dashed #00ff00;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        li::before {
+            content: ">>";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+        }
+
+        .agent-card {
+            border: 1px dashed #00ff00;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #050f05;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #00ff00;
+            color: #050a05;
+            padding: 2px 6px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #00ff00;
+            text-decoration: none;
+            border: 1px solid #00ff00;
+            padding: 5px 10px;
+            background-color: #040904;
+        }
+
+        .back-link:hover {
+            background-color: #00ff00;
+            color: #050a05;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <header>
+            <a href="index.html" class="back-link">&lt;&lt; TILBAKE TIL HOVEDLOGG</a>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <span>DOKUMENT ID: MET-ARK-01</span>
+                <span>STATUS: AKTIV PLAN</span>
+            </div>
+            <h1 style="margin: 10px 0 0 0;">ASHA'MAN-SIRKELEN: Slik lærer vi å tegne som en profesjonell arkitekt</h1>
+        </header>
+
+        <div class="box">
+            <h2>🎯 MÅLSETNING</h2>
+            <p style="font-size: 1.05em; line-height: 1.5;">
+                Å utarbeide fullstendige, profesjonelle arkitekttegninger, 3D-visualiseringer og videoer for minihuset på Grefstadveien 81 som er 100 % klare for bygging og kommunal godkjenning. For å oppnå dette bruker vi en lukket sirkel av spesialiserte AI-agenter som kontinuerlig kritiserer, retter og forbedrer arbeidet i hver fase.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>👥 SIRKELENS SPESIALAGENTER & ARBEIDSFLYT</h2>
+            
+            <div class="agent-card">
+                <h3><span class="tag">AGENT 1</span> 📐 TEKNISK ARKITEKT (Drafter-Agent)</h3>
+                <p><strong>Rolle:</strong> Ansvarlig for nøyaktig 2D-vektortegning (CAD/SVG/DXF). Skal tegne nøyaktige vegger, dører, vinduer, rør og elektrisk opplegg.</p>
+                <p><strong>Læringsmetode:</strong> Analysere eksisterende plantegninger for moderne minihus ("juks") og trekke ut de beste elementene for romfordelingen (78 kvm med 1 soverom, bad, wc, bod, kjøkken, stue). Sikrer at døråpninger og rom er optimalisert for robotstøvsugere.</p>
+            </div>
+
+            <div class="agent-card">
+                <h3><span class="tag">AGENT 2</span> 🎨 KREATIV DESIGNER (Aesthetic-Agent)</h3>
+                <p><strong>Rolle:</strong> Ansvarlig for estetikk, fasadeuttrykk, lysinnfall (solforhold på Grefstadveien 81), materialvalg og integrering med tomten.</p>
+                *   **Fokus:** Sikre at minihuset ser eksklusivt ut og utnytter tomten optimalt med Alta-skifer-veien, hekken og hagen.</p>
+            </div>
+
+            <div class="agent-card">
+                <h3><span class="tag">AGENT 3</span> ⚖️ REGULERINGSEKSPERT (Compliance-Agent)</h3>
+                <p><strong>Rolle:</strong> Kontrollerer alle tegninger mot Grimstads reguleringsplan (Plan ID: 0904_176) og TEK17 (byggteknisk forskrift).</p>
+                <p><strong>Fokus:</strong> Verifiserer avstand til vei, tillatt BYA/BRA, maksimal mønehøyde/gesimshøyde, og krav til dagslys og ventilasjon.</p>
+            </div>
+
+            <div class="agent-card">
+                <h3><span class="tag">AGENT 4</span> 🛠️ AUTOMATISERING & VISUALISERING (Rendering-Agent)</h3>
+                <p><strong>Rolle:</strong> Tar de rå 2D-vektortegningene og konverterer dem til fotorealistiske 3D-illustrasjoner og fly-through-videoer.</p>
+                <p><strong>Verktøy:</strong> Blender-scripting og ComfyUI via API/CLI (så snart AWS-instansen er operativ) for å generere ultraralistiske bilder og videoer av det ferdige huset plassert på den faktiske tomten.</p>
+            </div>
+
+            <div class="agent-card">
+                <h3><span class="tag">KRITIKEREN</span> 🧠 EKSTERN REVISOR (Gemini 3.5 Pro)</h3>
+                <p><strong>Rolle:</strong> Et uavhengig "super-øye" som går over alle tegninger, dokumenter, og planer. Etter hver iterasjon vil den påpeke eventuelle tekniske feil, svake planløsninger, manglende dokumentasjon for kommunen, eller estetiske svakheter.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>🔄 DEN ITERATIVE ARBEIDSPROSESSEN (SLIK VI JOBBER)</h2>
+            <ol>
+                <li><strong>Skisse-generering:</strong> Teknisk Arkitekt genererer en rå 2D-planløsning (SVG) basert på Grefstadveien-tomten.</li>
+                <li><strong>Design-tilpasning:</strong> Kreativ Designer plasserer vinduer for optimalt sollys og legger til materialvalg.</li>
+                <li><strong>Reguleringssjekk:</strong> Reguleringsekspert sjekker at bygget holder seg innenfor rammene for Plan ID 0904_176. Om den feiler, sendes tegningen tilbake til start med konkrete feilmeldinger.</li>
+                <li><strong>Rendering & Video:</strong> Render-agenten lager 3D-visninger og videoer.</li>
+                <li><strong>Gemini 3.5 Pro Revisjon:</strong> Hele pakken sendes til den eksterne Gemini 3.5 Pro for en nådeløs kvalitetsrevisjon.</li>
+                <li><strong>Push til GitHub:</strong> De godkjente tegningene og rapportene publiseres direkte på denne nettsiden slik at du kan laste dem ned.</li>
+            </ol>
+        </div>
+
+        <footer style="margin-top: 20px; border-top: 2px solid #00ff00; padding-top: 10px; font-size: 0.9em; text-align: center;">
+            THE PATTERN WEAVES AS THE WHEEL WILLS. JARVIS v2.0 AT YOUR SERVICE, DRAGON REBORN.
+        </footer>
+    </div>
+</body>
+</html>
