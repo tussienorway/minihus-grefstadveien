@@ -1,6 +1,6 @@
 # Minihusprosjektet: Grefstadveien 81, Grimstad
 
-_Sist oppdatert: 2026-06-21 01:08:32_
+_Sist oppdatert: 2026-06-22 01:13:31_
 
 Velkommen, Dragon Reborn! Dette er din levende dokumentasjon over Minihusprosjektet: Grefstadveien 81, Grimstad, publisert via GitHub Pages: [https://tussienorway.github.io/minihus-grefstadveien/](https://tussienorway.github.io/minihus-grefstadveien/)
 
@@ -20,7 +20,7 @@ Du har bedt meg om å:
 
 ## Min tenkemåte for å løse det
 
-Plan ID 0904_176 bestemmelser fullstendig analysert via PDF (documentId=6955): Kun B1/B2 som frisiktsone bolig; ingen BYA/BRA, høyde eller avstand spesifisert. Kommuneplan arealdel 2019-2031 PDF analysert: generelle fortettingsregler (30% BYA / 225m2 BRA), men ingen B1/B2-spesifikke tall. Visuelt plankart kun som bilde i PDF (ikke lesbart tekst). Kilder: https://karttjenester.ikt-agder.no/...6955 og Grimstad kommuneplan PDF. Gjenværende uklarheter: eksakte verdier for Grefstadveien 81 må hentes fra interaktivt kart eller direkte kommunehenvendelse; nasjonale pbl-standarder (f.eks. 4m avstand) kan gjelde subsidiært. Oppdatert deliverables basert på nye funn.
+Cronjobb 2026-06-21: Plan ID 0904_176 bestemmelser + kommuneplanens arealdel 2019-2031 fullstendig analysert. Reguleringsplan 0904_176 (kilde: documentId=6955/1071): Kun B1/B2 definert som bolig i frisiktsone (B1: del av boligtomt i regulert frisiktsone; B2: tidligere frisiktsone + veiareal). Ingen BYA/BRA, byggehøyde, min avstand spesifisert – planen handler om veiomlegging forbi nr 81/97. Kommuneplan: Fortetting i boligområder <2000m²: max 30% BYA / 225m² BRA; generelle bestemmelser for parkering, uteareal. Ingen B1/B2-spesifikke kvantitative krav. Visuelt plankart: Ingen lesbart PDF funnet (kun interaktiv portal). Kilder: https://karttjenester.ikt-agder.no/planinnsyn_grimstad/api/plandocument?documentId=6955 , https://www.grimstad.kommune.no/_f/p1/ie745ba92-f189-4f60-8191-951130b03d66/bestemmelser_kommuneplanens-arealdel-2019-2031.pdf . Gjenværende uklarheter: Eksakt BYA/BRA/høyde/avstand for Grefstadveien 81 ukjent (reg.plan stilltiende); nasjonal standard 4m avstand til eiendomsgrense gjelder. Oppdatert deliverables og pending.
 
 ## Hva vi har laget (Status: in_progress)
 
