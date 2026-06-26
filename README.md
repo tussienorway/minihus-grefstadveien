@@ -1,6 +1,6 @@
 # Minihusprosjektet: Grefstadveien 81, Grimstad
 
-_Sist oppdatert: 2026-06-26 07:41:13_
+_Sist oppdatert: 2026-06-26 19:45:20_
 
 Velkommen, Dragon Reborn! Dette er din levende dokumentasjon over Minihusprosjektet: Grefstadveien 81, Grimstad, publisert via GitHub Pages: [https://tussienorway.github.io/minihus-grefstadveien/](https://tussienorway.github.io/minihus-grefstadveien/)
 
